@@ -1,0 +1,16 @@
+{% extends 'spotify/base.html'%}
+{% block content %}
+    <div>
+        <img src="../static/images/spot.png">
+        <form method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %}
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+{% endblock content %}
